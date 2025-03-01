@@ -5,9 +5,9 @@ matplotlib.rcParams['text.usetex'] = False  # Disable LaTeX rendering
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Create x values for arcsin/arccos (-1 to 1) and arctan/arccot (-5 to 5)
-x1 = np.linspace(-1, 1, 400)  # For arcsin and arccos
-x2 = np.linspace(-5, 5, 400)  # For arctan and arccot
+# Create x values with extended range
+x1 = np.linspace(-1, 1, 1000)  # More points for arcsin and arccos
+x2 = np.linspace(-20, 20, 1000)  # Extended range for arctan and arccot
 
 # Calculate function values
 y_arcsin = np.arcsin(x1)
@@ -15,8 +15,8 @@ y_arccos = np.arccos(x1)
 y_arctan = np.arctan(x2)
 y_arccot = np.pi/2 - np.arctan(x2)  # arccot(x) = π/2 - arctan(x)
 
-# Create subplots
-fig, axes = plt.subplots(2, 2, figsize=(12, 10))
+# Create subplots with larger figure size
+fig, axes = plt.subplots(2, 2, figsize=(15, 12))
 
 # arcsin(x)
 axes[0, 0].plot(x1, y_arcsin, label='arcsin(x)', color='b')
@@ -42,18 +42,23 @@ axes[1, 1].set_title('arccot(x)')
 axes[1, 1].grid(True)
 axes[1, 1].legend()
 
-# Add axis lines and labels for each plot
+# Add more ticks for better readability
 for ax in axes.flat:
     ax.axhline(y=0, color='k', linestyle='-', alpha=0.3)
     ax.axvline(x=0, color='k', linestyle='-', alpha=0.3)
     ax.set_xlabel('x')
     ax.set_ylabel('y')
+    ax.grid(True, which='both', linestyle='--', alpha=0.6)
 
-# Set specific limits for each function
-axes[0, 0].set_ylim([-np.pi/2, np.pi/2])
-axes[0, 1].set_ylim([0, np.pi])
-axes[1, 0].set_ylim([-np.pi/2, np.pi/2])
-axes[1, 1].set_ylim([0, np.pi])
+# Set specific limits and ticks
+axes[0, 0].set_ylim([-np.pi/2 - 0.2, np.pi/2 + 0.2])
+axes[0, 1].set_ylim([-0.2, np.pi + 0.2])
+axes[1, 0].set_ylim([-np.pi/2 - 0.2, np.pi/2 + 0.2])
+axes[1, 1].set_ylim([-0.2, np.pi + 0.2])
+
+# Set x-axis limits for arctan and arccot
+axes[1, 0].set_xlim([-20, 20])
+axes[1, 1].set_xlim([-20, 20])
 
 # Adjust layout and display
 plt.tight_layout()
