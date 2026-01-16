@@ -1,129 +1,165 @@
-# Ôn tập Giải tích 1 (MI1111) - Giữa kỳ
+# 📚 Ôn tập Giải tích 1 (MI1111) - Giữa kỳ
 
-Đây là tài liệu tổng hợp các kiến thức quan trọng và các ví dụ thực tế để chuẩn bị cho bài thi giữa kỳ môn Giải tích 1.
+| Thông tin | Chi tiết |
+| :--- | :--- |
+| **Môn học** | Giải tích 1 (MI1111) |
+| **Nội dung** | Tổng hợp kiến thức & Dạng bài tập giữa kỳ |
+| **Mục tiêu** | Nắm vững lý thuyết, mẹo giải nhanh và trình bày chuẩn |
+
+---
+
+## 📖 Mục lục
+1. [Nội dung chuyên sâu](#i-nội-dung-chuyên-sâu)
+    - [Quy tắc hàm hợp & Hàm ẩn](#1-quy-tắc-hàm-hợp--hàm-ẩn)
+    - [Đạo hàm các hàm đặc biệt](#2-đạo-hàm-các-hàm-đặc-biệt-mũ-logarit)
+    - [Hàm sơ cấp (Euler & Hyperbolic)](#3-hàm-số-sơ-cấp)
+2. [Tổng hợp Mẹo nhớ (Cheat Sheet)](#ii-tổng-hợp-mẹo-nhớ-cheat-sheet)
+3. [Các dạng bài tập thi giữa kỳ](#iii-các-dạng-bài-tập-thi-giữa-kỳ)
 
 ---
 
 ## I. Nội dung chuyên sâu
 
-### 1. Quy tắc hàm hợp (Chain Rule)
-Công thức: 
-$$f(x) = (g \circ h)(x) = g(h(x)) \Rightarrow f'(x) = g'(h(x)) \cdot h'(x)$$
+### 1. Quy tắc hàm hợp & Hàm ẩn
 
-**Ví dụ:** Tính đạo hàm của $f(x) = \sin(x^2 + 1)$
-- Đặt $h(x) = x^2 + 1 \Rightarrow h'(x) = 2x$
-- $g(u) = \sin(u) \Rightarrow g'(u) = \cos(u)$
-- **Kết quả:** $f'(x) = \cos(x^2 + 1) \cdot 2x$
+#### a. Quy tắc hàm hợp (Chain Rule)
+> **Định lý:** Đạo hàm của hàm hợp là tích của các đạo hàm thành phần.
 
-### 2. Đạo hàm hàm ẩn (Implicit Differentiation)
-Áp dụng khi hàm số không được cho dưới dạng tường minh $y = f(x)$.
+$$f(x) = (g \circ h)(x) = g(h(x)) \quad \Rightarrow \quad f'(x) = g'(h(x)) \cdot h'(x)$$
 
-**Ví dụ:** Tính đạo hàm của $y = \arcsin(x)$
-1. Chuyển về hàm ẩn: $\sin(y) = x$
-2. Đạo hàm hai vế theo $x$:
-   $$\frac{d}{dx}(\sin y) = \frac{d}{dx}(x)$$
-   $$\cos(y) \cdot y' = 1$$
-3. Rút $y'$:
-   $$y' = \frac{1}{\cos y}$$
-4. Vì $\cos y = \sqrt{1 - \sin^2 y} = \sqrt{1 - x^2}$
-   $$\Rightarrow y' = \frac{1}{\sqrt{1 - x^2}}$$
+**Ví dụ minh họa:**  
+Tính đạo hàm của $f(x) = \sin(x^2 + 1)$.
+*   Đặt $u = x^2 + 1 \Rightarrow u' = 2x$.
+*   Hàm trở thành $\sin(u) \Rightarrow (\sin u)' = \cos u \cdot u'$.
+*   **Kết quả:** $f'(x) = 2x \cos(x^2 + 1)$.
 
+#### b. Đạo hàm hàm ẩn (Implicit Differentiation)
+Sử dụng khi không thể (hoặc khó) biểu diễn $y$ theo $x$ một cách tường minh.
 
-### 3. Chứng minh
-
-$$\frac{d}{dx} b^{fx} = f'(x) \cdot \ln b \cdot b^{fx}$$
-
-**Ví dụ:** Tính đạo hàm của $f(x) = e^{2x}$
-- $f'(x) = 2$
-- $f(x) = e^{2x} \Rightarrow b = e$
-- **Kết quả:** $f'(x) = 2e^{2x}$
-
-### 4. Đạo hàm hàm Logarit
-**Chứng minh:** $\frac{d}{dx} \log_a(x) = \frac{1}{x \ln a}$
-
-1. Sử dụng công thức đổi cơ số:
-   $$\log_a(x) = \frac{\ln x}{\ln a}$$
-2. Đạo hàm hai vế theo $x$:
-   $$\frac{d}{dx} \log_a(x) = \frac{d}{dx} \left( \frac{\ln x}{\ln a} \right) = \frac{1}{\ln a} \cdot \frac{d}{dx}(\ln x) = \frac{1}{\ln a} \cdot \frac{1}{x} = \frac{1}{x \ln a}$$
+**Bài toán:** Tính $y'$ biết $y = \arcsin(x)$.
+1.  Biến đổi về dạng ẩn: $\sin(y) = x$.
+2.  Đạo hàm hai vế theo $x$:
+    $$\frac{d}{dx}(\sin y) = \frac{d}{dx}(x) \iff \cos(y) \cdot y' = 1$$
+3.  Suy ra: $y' = \frac{1}{\cos y} = \frac{1}{\sqrt{1 - \sin^2 y}} = \frac{1}{\sqrt{1 - x^2}}$.
 
 ---
 
-## II. Các dạng bài tập thi giữa kỳ
+### 2. Đạo hàm các hàm đặc biệt (Mũ & Logarit)
 
-### 1. Tìm tập xác định
-**Ví dụ:** Tìm tập xác định của hàm số $y = \arcsin(3x-5)$
-- Điều kiện: $-1 \le 3x-5 \le 1$
-- Giải bất phương trình:
-  $$4 \le 3x \le 6 \Leftrightarrow \frac{4}{3} \le x \le 2$$
-- **Kết luận:** $D = [\frac{4}{3}, 2]$
+#### a. Hàm số mũ tổng quát $y = b^{f(x)}$
+Công thức:
+$$\frac{d}{dx} b^{f(x)} = f'(x) \cdot b^{f(x)} \cdot \ln b$$
 
-> **Lưu ý:** Các vô cùng bé tương đương khi $x \to 0$:
-> - $\sin x \sim x$
-> - $\tan x \sim x$
-> - $\arcsin x \sim x$
-> - $\arctan x \sim x$
-> - $e^x - 1 \sim x$
-> - $\ln(1 + x) \sim x$
-> - $(1+x)^n - 1 \sim nx$
-> - $1 - \cos x \sim \frac{x^2}{2}$
+**Ví dụ:** Với $y = e^{2x}$ ($b=e, \ln e = 1$):
+$$y' = (2x)' \cdot e^{2x} = 2e^{2x}$$
 
-### 2. So sánh các cặp vô cùng bé
-**Ví dụ:** So sánh $a(x) = \sin(2x^2 - x^4)$ và $b(x) = 1 - \cos(2x)$ khi $x \to 0$.
-- $a(x) \sim 2x^2 - x^4 \sim 2x^2$ (lấy bậc thấp nhất)
-- $b(x) \sim \frac{(2x)^2}{2} = \frac{4x^2}{2} = 2x^2$
-- **Kết luận:** $a(x) \sim b(x)$ (hai vô cùng bé tương đương).
+#### b. Hàm Logarit $y = \log_a(x)$
+Chứng minh từ công thức đổi cơ số $\log_a x = \frac{\ln x}{\ln a}$:
+$$\frac{d}{dx} \log_a(x) = \frac{d}{dx} \left( \frac{\ln x}{\ln a} \right) = \frac{1}{\ln a} \cdot (\ln x)' = \frac{1}{x \ln a}$$
 
-### 3. Cực trị hàm số
-**Ví dụ:** Tìm cực trị của $y = 3x(\ln x - 7)$ trên $D = (0, +\infty)$.
-- Đạo hàm: $y' = 3(\ln x - 7) + 3x \cdot \frac{1}{x} = 3\ln x - 21 + 3 = 3\ln x - 18$
-- Cực trị: $y' = 0 \Leftrightarrow \ln x = 6 \Leftrightarrow x = e^6$
+---
 
-**Kiểm tra tính chất:**
-- **Cách 1 (Bảng biến thiên):**
-  - $0 < x < e^6 \Rightarrow y' < 0$ (nghịch biến)
-  - $x > e^6 \Rightarrow y' > 0$ (đồng biến)
-  $\Rightarrow$ Cực tiểu tại $x = e^6$, giá trị cực tiểu $y(e^6) = -3e^6$.
-- **Cách 2 (Đạo hàm cấp 2):**
-  $y'' = \frac{3}{x} \Rightarrow y''(e^6) = \frac{3}{e^6} > 0 \Rightarrow$ Hàm số đạt cực tiểu.
+### 3. Hàm số sơ cấp
 
-### 4. Quy tắc L'Hospital (Dạng $0/0$ hoặc $\infty/\infty$)
-**Ví dụ:** $L = \lim_{x \to 0} \frac{\sin x - x}{x^3}$
-- Áp dụng L'Hospital: $L = \lim_{x \to 0} \frac{\cos x - 1}{3x^2}$
-- Tiếp tục: $L = \lim_{x \to 0} \frac{-\sin x}{6x}$
-- Tiếp tục: $L = \lim_{x \to 0} \frac{-\cos x}{6} = -\frac{1}{6}$
+#### a. Công thức Euler
+"Cây cầu" nối liền lượng giác và số phức:
+$$e^{ix} = \cos x + i\sin x$$
 
-### 5. Tính giới hạn bằng vô cùng bé tương đương
+**Hệ quả (Biểu diễn $\cos, \sin$ qua $e$):**
+$$\cos x = \frac{e^{ix} + e^{-ix}}{2}; \quad \sin x = \frac{e^{ix} - e^{-ix}}{2i}$$
+
+#### b. Hàm Hyperbolic
+Tương tự lượng giác nhưng trên Hyperbol:
+*   $\cosh x = \frac{e^x + e^{-x}}{2}$
+*   $\sinh x = \frac{e^x - e^{-x}}{2}$
+*   $\tanh x = \frac{\sinh x}{\cosh x} = \frac{e^x - e^{-x}}{e^x + e^{-x}}$
+
+> **Bản chất:**
+> *   $e^{ix}$: Biểu diễn phép quay (Rotation) $\rightarrow$ Lượng giác.
+> *   $e^x$: Biểu diễn sự tăng trưởng/phóng (Scaling) $\rightarrow$ Hyperbolic.
+
+---
+
+## II. Tổng hợp Mẹo nhớ (Cheat Sheet)
+
+### 1. Đạo hàm cấp cao $y^{(n)}$
+Hãy nhớ **"Quy luật biến đổi"** thay vì học vẹt:
+
+| Hàm số ($y$) | Đạo hàm cấp $n$ ($y^{(n)}$) | Mẹo nhớ logic |
+| :--- | :--- | :--- |
+| **Lượng giác**<br>$\sin(ax), \cos(ax)$ | $a^n \sin(ax + n\frac{\pi}{2})$<br>$a^n \cos(ax + n\frac{\pi}{2})$ | Mỗi lần đạo hàm là một lần cộng thêm góc $90^\circ$ ($\pi/2$). |
+| **Phân thức**<br>$\frac{1}{x+a}$ | $\frac{(-1)^n n!}{(x+a)^{n+1}}$ | Số mũ rơi xuống tạo giai thừa ($n!$) và dấu xen kẽ $(-1)^n$. Mẫu tăng bậc. |
+| **Logarit**<br>$\ln(x+a)$ | $\frac{(-1)^{n-1}(n-1)!}{(x+a)^n}$ | Là "lùi 1 cấp" của hàm phân thức (vì đạo hàm cấp 1 của $\ln$ là phân thức). |
+| **Mũ**<br>$e^{ax}$ | $a^n e^{ax}$ | Đơn giản nhất: chỉ nhân thêm hệ số $a$ mỗi lần đạo hàm. |
+
+**Quy tắc Leibniz (Đạo hàm tích $u \cdot v$):**  
+Structurally giống hệt **Nhị thức Newton**:
+$$(u \cdot v)^{(n)} = \sum_{k=0}^{n} C_n^k \cdot u^{(n-k)} \cdot v^{(k)}$$
+*Tip:* Chọn $v$ là đa thức để nó triệt tiêu về 0 sau vài lần đạo hàm.
+
+### 2. Các Vô cùng bé (VCB) tương đương khi $x \to 0$
+
+| Lượng giác | Mũ & Logarit | Nhị thức |
+| :--- | :--- | :--- |
+| $\sin x \sim x$ | $e^x - 1 \sim x$ | $(1+x)^\alpha - 1 \sim \alpha x$ |
+| $\tan x \sim x$ | $\ln(1+x) \sim x$ | $\sqrt{1+x} - 1 \sim \frac{x}{2}$ |
+| $\arcsin x \sim x$ | $a^x - 1 \sim x \ln a$ | $1 - \cos x \sim \frac{x^2}{2}$ |
+| $\arctan x \sim x$ | | |
+
+---
+
+## III. Các dạng bài tập thi giữa kỳ
+
+### Dạng 1: Tìm Tập xác định
+**Ví dụ:** $y = \arcsin(3x-5)$
+*   ĐK: $-1 \le 3x-5 \le 1 \iff 4 \le 3x \le 6 \iff \frac{4}{3} \le x \le 2$.
+*   **Đáp án:** $D = [\frac{4}{3}, 2]$.
+
+### Dạng 2: Tính giới hạn & So sánh VCB
 **Ví dụ:** $L = \lim_{x \to 0} \frac{(e^{2x^2} - 1) \ln(1+ 3x)}{4x^3 + x^5}$
-- Thay vô cùng bé tương đương:
-  $L = \lim_{x \to 0} \frac{(2x^2) \cdot (3x)}{4x^3} = \lim_{x \to 0} \frac{6x^3}{4x^3} = \frac{6}{4} = \frac{3}{2}$
+*   Thay thế VCB: $e^{2x^2}-1 \sim 2x^2$ và $\ln(1+3x) \sim 3x$.
+*   Mẫu số: $4x^3 + x^5 = x^3(4+x^2) \sim 4x^3$.
+*   Tính toán:
+    $$L = \lim_{x \to 0} \frac{(2x^2) \cdot (3x)}{4x^3} = \frac{6}{4} = \frac{3}{2}$$
 
-### 6. Đạo hàm một phía
-**Ví dụ:** $f(x) = |16 - x^2|$. Tính đạo hàm tại $x = 4$ và $x = -4$.
-- **Tại $x = 4$:**
-  - $x \to 4^-: f(x) = 16 - x^2 \Rightarrow f'_{-}(4) = -2(4) = -8$
-  - $x \to 4^+: f(x) = x^2 - 16 \Rightarrow f'_{+}(4) = 2(4) = 8$
-- **Tại $x = -4$:**
-  - $x \to -4^-: f(x) = x^2 - 16 \Rightarrow f'_{-}(-4) = 2(-4) = -8$
-  - $x \to -4^+: f(x) = 16 - x^2 \Rightarrow f'_{+}(-4) = -2(-4) = 8$
+### Dạng 3: Cực trị hàm số
+**Ví dụ:** $y = 3x(\ln x - 7)$ với $x > 0$.
+1.  **Đạo hàm:**
+    $$y' = 3(\ln x - 7) + 3x \cdot \frac{1}{x} = 3\ln x - 21 + 3 = 3\ln x - 18$$
+2.  **Điểm tới hạn:** $y' = 0 \iff \ln x = 6 \iff x = e^6$.
+3.  **Xét dấu $y''$:**
+    $$y'' = \frac{3}{x} \Rightarrow y''(e^6) = \frac{3}{e^6} > 0$$
+    $\Rightarrow$ Hàm số đạt **Cực tiểu** tại $x = e^6$, $y_{CT} = -3e^6$.
 
-### 7. Khai triển Maclaurin
-**Ví dụ:** Cho $f(x) = e^{-x^3+2}$. Tính $f^{(21)}(0)$.
-- Ta có $f(x) = e^2 \cdot e^{-x^3}$
-- Khai triển $e^u = \sum_{n=0}^{\infty} \frac{u^n}{n!}$. Với $u = -x^3$:
+### Dạng 4: Quy tắc L'Hospital & Đạo hàm một phía
+**L'Hospital:** Dùng cho dạng $\frac{0}{0}$ hoặc $\frac{\infty}{\infty}$.
+$$\lim_{x \to 0} \frac{\sin x - x}{x^3} \xrightarrow{L'H} \lim \frac{\cos x - 1}{3x^2} \xrightarrow{L'H} \lim \frac{-\sin x}{6x} = -\frac{1}{6}$$
 
-  $e^{-x^3} = \sum_{n=0}^{\infty} \frac{(-x^3)^n}{n!} = \sum_{n=0}^{\infty} \frac{(-1)^n x^{3n}}{n!}$
-- Số hạng chứa $x^{21}$ ứng với $3n = 21 \Rightarrow n = 7$:
+**Đạo hàm một phía:** Với hàm chứa trị tuyệt đối $|A|$.
+*   Xét $A > 0$ và $A < 0$ để phá dấu trị tuyệt đối, sau đó đạo hàm bình thường.
 
-  Hệ số của $x^{21}$ là: $\frac{f^{(21)}(0)}{21!} = e^2 \cdot \frac{(-1)^7}{7!}$
-  $\Rightarrow f^{(21)}(0) = -\frac{21!}{7!} e^2$
+### Dạng 5: Khai triển Maclaurin & Đạo hàm cấp cao tại 0
+**Công thức liên hệ:** Hệ số của $x^n$ trong khai triển Maclaurin của $f(x)$ chính là $\frac{f^{(n)}(0)}{n!}$.
 
-### 8. Tiệm cận của đồ thị hàm số
-*   **Tiệm cận đứng:** $x = x_0$ nếu $\lim_{x \to x_0} f(x) = \pm\infty$
-*   **Tiệm cận ngang:** $y = y_0$ nếu $\lim_{x \to \pm\infty} f(x) = y_0$
-*   **Tiệm cận xiên:** $y = ax + b$ ($a \neq 0$) với:
-    $$a = \lim_{x \to \pm\infty} \frac{f(x)}{x}; \quad b = \lim_{x \to \pm\infty} [f(x) - ax]$$
+**Ví dụ:** Khai triển Maclaurin của $f(x) = e^{-x^3+2}$ đến cấp 21 và tính $f^{(21)}(0)$.
 
-**Ví dụ:** Tìm tiệm cận xiên của $f(x) = \frac{x^2+2x-1}{x+1}$
-1. $a = \lim_{x \to \infty} \frac{x^2+2x-1}{x(x+1)} = 1$
-2. $b = \lim_{x \to \infty} \left(\frac{x^2+2x-1}{x+1} - x\right) = \lim_{x \to \infty} \frac{x-1}{x+1} = 1$
-- **Kết luận:** Tiệm cận xiên $y = x + 1$.
+**Bước 1: Khai triển chuỗi**
+Ta có $f(x) = e^2 \cdot e^{-x^3}$.
+Sử dụng khai triển cơ bản: $e^u = 1 + \frac{u}{1!} + \frac{u^2}{2!} + \dots + \frac{u^n}{n!} + o(u^n)$.
+Thay $u = -x^3$:
+$$e^{-x^3} = 1 + \frac{(-x^3)}{1!} + \frac{(-x^3)^2}{2!} + \dots + \frac{(-x^3)^7}{7!} + o(x^{21})$$
+$$e^{-x^3} = 1 - x^3 + \frac{x^6}{2!} - \frac{x^9}{3!} + \dots - \frac{x^{21}}{7!} + o(x^{21})$$
+Vậy khai triển của $f(x)$ đến cấp 21 là:
+$$f(x) = e^2 \left( 1 - x^3 + \frac{x^6}{2!} - \dots - \frac{x^{21}}{7!} \right) + o(x^{21})$$
+
+**Bước 2: Tìm đạo hàm cấp cao**
+Hệ số của $x^{21}$ trong khai triển trên là:
+$$a_{21} = e^2 \cdot \frac{-1}{7!} = -\frac{e^2}{5040}$$
+Theo công thức Taylor: $a_{21} = \frac{f^{(21)}(0)}{21!}$.
+Suy ra:
+$$f^{(21)}(0) = a_{21} \cdot 21! = -\frac{e^2}{7!} \cdot 21!$$
+
+### Dạng 6: Tiệm cận
+*   **Đứng:** $\lim_{x \to x_0} f(x) = \infty \Rightarrow x = x_0$.
+*   **Ngang:** $\lim_{x \to \infty} f(x) = y_0 \Rightarrow y = y_0$.
+*   **Xiên:** $y = ax+b$ với $a = \lim \frac{f(x)}{x}, b = \lim (f(x) - ax)$.
